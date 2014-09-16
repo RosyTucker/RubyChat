@@ -7,4 +7,4 @@ Thread. new{
 }
 
 client = Client. new
-client.start("eurtucker", 2008)
+client.start("eurtucker", 2008, "Rosy")

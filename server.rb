@@ -6,7 +6,9 @@ class Server
     server = TCPServer.new port
     loop do
       Thread.start(server.accept) do |client|
-          puts client.gets
+          msg = client.gets
+          puts msg
+          system("say 'new message from #{msg}'")
           client.close
         end
       end

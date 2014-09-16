@@ -2,10 +2,10 @@ require 'socket'
 
 class Client
 
-  def start(ip, port)
+  def start(ip, port, username)
     loop do
       begin
-        clientSession = TCPSocket.new( ip,port )
+        clientSession = TCPSocket.new(ip,port )
 
       rescue StandardError => bang
         puts "Error !! "
@@ -13,7 +13,7 @@ class Client
       else
 
         msg = gets
-        clientSession.puts ip + " : " + msg
+        clientSession.puts username + " : " + msg
       end
 
     end
